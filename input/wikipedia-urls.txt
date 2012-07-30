@@ -1,2 +1,3 @@
-http://en.wikipedia.org/wiki/Chemistry
-http://en.wikipedia.org/wiki/Photography
+Chemistry, http://en.wikipedia.org/wiki/Chemistry
+Photography, http://en.wikipedia.org/wiki/Photography
+Pashtunwali, http://en.wikipedia.org/wiki/Pashtunwali

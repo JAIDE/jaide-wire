@@ -76,7 +76,7 @@
               <arguments>
                 <argument>input/wikipedia-urls.txt</argument>
                 <argument>input/wikipedia-banned-sections.txt</argument>
-                <argument>input/wikipedia-banned-words.txt</argument>
+                <argument>input/banned-words.txt</argument>
               </arguments>
             </configuration>
           </execution>
