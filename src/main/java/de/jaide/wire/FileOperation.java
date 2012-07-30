@@ -1,25 +1,28 @@
 package de.jaide.wire;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.net.URL;
 import java.util.ArrayList;
 
+import de.jaide.exception.FileOperationFailedException;
+
 /**
- * TODO
+ * File reader and Writer
  * 
- * @author TODO NAME
+ * @author Rias A. Sherzad (rias.sherzad@jaide.de)
  */
 public abstract class FileOperation {
-  /**
-   * The WebClient configuration and the WebRequest settings to use to connect/operate against the webmailer/platform.
-   */
+
   protected URL url = null;
 
   protected String outputFileName = "";
@@ -32,7 +35,7 @@ public abstract class FileOperation {
 
   protected String value = "";
 
-  protected PrintWriter output = null;
+  protected Writer output = null;
 
   protected File outputFile = null;
 
@@ -41,8 +44,9 @@ public abstract class FileOperation {
    * 
    * @param fileName
    * @return retList.
+   * @throws FileOperationFailedException
    */
-  protected ArrayList<String> readFile(String fileName) {
+  protected ArrayList<String> readFile(String fileName) throws FileOperationFailedException {
     ArrayList<String> retList = new ArrayList<String>();
 
     FileInputStream fstream = null;
@@ -66,8 +70,10 @@ public abstract class FileOperation {
       }
 
       in.close();
-    } catch (Exception e) {
-      e.printStackTrace();
+    } catch (FileNotFoundException e) {
+      throw new FileOperationFailedException(e.fillInStackTrace());
+    } catch (IOException e) {
+      throw new FileOperationFailedException(e.fillInStackTrace());
     }
     return retList;
   }
@@ -85,23 +91,24 @@ public abstract class FileOperation {
       new File(outputPath).mkdir();
       outputFile = new File(outputPath + "/" + outputFileName + "_" + locale + ".txt");
     }
-    output = new PrintWriter(new FileWriter(outputFile));
+    output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"));
   }
 
   /**
    * A helper method that writes the content into the file
    * 
    * @param word, URL
+   * @throws FileOperationFailedException
    */
-  protected void writeOutput(String words, String anc) {
+  protected void writeOutput(String words, String anc) throws FileOperationFailedException {
 
     try {
-
-      output.println(words + "::" + anc);
-
-    } catch (Exception e) {
-      e.printStackTrace();
+      output.write(words + "::" + anc);
+      output.write("\n");
+    } catch (IOException e) {
+      throw new FileOperationFailedException(e.fillInStackTrace());
     }
+
   }
 
   /**

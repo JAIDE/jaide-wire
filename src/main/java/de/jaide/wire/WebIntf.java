@@ -1,15 +1,18 @@
 package de.jaide.wire;
 
+import de.jaide.exception.CrawlerFailedException;
+import de.jaide.exception.FileOperationFailedException;
+
 /**
- * TODO
+ * Web Interface
  * 
- * @author TODO NAME
+ * @author Rias A. Sherzad (rias.sherzad@jaide.de)
  */
 public interface WebIntf {
 
   void connect();
 
-  void crawlPage();
+  void crawlPage() throws CrawlerFailedException, FileOperationFailedException;
 
   void disconnect();
 

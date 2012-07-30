@@ -1,22 +1,36 @@
 package de.jaide.wire;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.util.NameValuePair;
+
+import de.jaide.exception.CrawlerFailedException;
+import de.jaide.exception.FileOperationFailedException;
 
 /**
- * TODO
+ * Wikipedia Crawler
  * 
- * @author TODO NAME
+ * @author Rias A. Sherzad (rias.sherzad@jaide.de)
  */
 public class Crawler extends FileOperation implements WebIntf {
+  /**
+   * Our logger.
+   */
+  private static Logger LOG = Logger.getLogger(Crawler.class);
   protected WebClient webClient = null;
 
   ArrayList<String> urlList = new ArrayList<String>();
@@ -36,21 +50,21 @@ public class Crawler extends FileOperation implements WebIntf {
 
   String[] lang = { "en", "ar", "fa", "fr", "de", "id", "es", "tr", "ur" };
 
-  public Crawler(String args[]) {
+  public Crawler(String args[]) throws CrawlerFailedException, FileOperationFailedException {
     /*
-     * Reading URL List file to crawl.
+     * Reading URL
      */
     if (args.length >= 1)
       urlList = readFile(args[0]);
 
     /*
-     * Reading bannedSections file
+     * Reading banned Sections
      */
     if (args.length >= 2)
       bannedSectionList = readFile(args[1]);
 
     /*
-     * Reading banned words File
+     * Reading banned words
      */
     if (args.length == 3)
       bannedWordList = readFile(args[2]);
@@ -65,7 +79,6 @@ public class Crawler extends FileOperation implements WebIntf {
    */
   @Override
   public void connect() {
-    // TODO Auto-generated method stub
     webClient = new WebClient(BrowserVersion.FIREFOX_3_6);
     webClient.setJavaScriptEnabled(false);
     webClient.setCssEnabled(false);
@@ -76,9 +89,7 @@ public class Crawler extends FileOperation implements WebIntf {
    */
   @SuppressWarnings("unchecked")
   @Override
-  public void crawlPage() {
-    // TODO Auto-generated method stub
-
+  public void crawlPage() throws CrawlerFailedException, FileOperationFailedException {
     String content = "";
     String[] value = null;
     String host = "";
@@ -112,12 +123,23 @@ public class Crawler extends FileOperation implements WebIntf {
 
           if (frAnchors.size() > 0) {
             url = new URL(URLDecoder.decode("http:" + frAnchors.get(0).getHrefAttribute(), "UTF-8"));
-            System.out.println(url);
             CrawlInfo(url);
           }
 
         }
-      } catch (Exception e) {
+      } catch (MalformedURLException e) {
+        throw new CrawlerFailedException(
+            "The server tried to connect to or was redirected to a host that could not be resolved. This could be a firewall or a DNS issue.",
+            e.fillInStackTrace());
+      } catch (UnsupportedEncodingException e) {
+        throw new CrawlerFailedException("UTF-8 not supported", e.fillInStackTrace());
+      } catch (FailingHttpStatusCodeException e) {
+        throw new CrawlerFailedException(
+            "The server tried to connect to or was redirected to a host that could not be resolved. This could be a firewall or a DNS issue.",
+            e.fillInStackTrace());
+      } catch (IOException e) {
+        throw new CrawlerFailedException("Some general problem occured. Please see the stacktrace for more information.",
+            e.fillInStackTrace());
 
       }
     }
@@ -127,15 +149,25 @@ public class Crawler extends FileOperation implements WebIntf {
   /*
    * Extracting the content from the webpage
    */
-  private void CrawlInfo(URL url) {
+  private void CrawlInfo(URL url) throws CrawlerFailedException, FileOperationFailedException {
     ArrayList<String> pathList = new ArrayList<String>();
     try {
 
       setOutputFile();
+      crawlPage = (HtmlPage) webClient.getPage(url);
+
+      /*
+       * Print the response headers - in trace mode only.
+       */
+      if (LOG.isTraceEnabled()) {
+        List<NameValuePair> responseHeaders = crawlPage.getWebResponse().getResponseHeaders();
+        for (NameValuePair nameValuePair : responseHeaders)
+          LOG.trace(nameValuePair.getName() + " --> " + nameValuePair.getValue());
+      }
+
       /*
        * Xpath for content page
        */
-      crawlPage = (HtmlPage) webClient.getPage(url);
       pathList.add("//div[@id='mw-content-text']//p//a");
 
       /*
@@ -183,15 +215,21 @@ public class Crawler extends FileOperation implements WebIntf {
         dataIterator(pathList.get(i).toString());
 
       closeOutputFile();
-    } catch (Exception e) {
-      e.printStackTrace();
+
+    } catch (FailingHttpStatusCodeException e) {
+      throw new CrawlerFailedException(
+          "The server tried to connect to or was redirected to a host that could not be resolved. This could be a firewall or a DNS issue.",
+          e.fillInStackTrace());
+    } catch (IOException e) {
+      throw new CrawlerFailedException("Some general problem occured. Please see the stacktrace for more information.",
+          e.fillInStackTrace());
     }
   }
 
   /*
    * Crawling the webpage for given xpath
    */
-  private void dataIterator(String path) {
+  private void dataIterator(String path) throws CrawlerFailedException, FileOperationFailedException {
 
     Iterator<HtmlAnchor> iterator = null;
     @SuppressWarnings("unchecked")
@@ -206,7 +244,7 @@ public class Crawler extends FileOperation implements WebIntf {
         word = anchor.asText().toString().trim();
         anc = anchor.getHrefAttribute();
         if (!anc.contains("http"))
-          value = "http:/" + anc;
+          value = "http://" + locale + ".wikipedia.org/" + anc;
         else
           value = anc;
         anc = URLDecoder.decode(value, "UTF-8");
@@ -219,18 +257,24 @@ public class Crawler extends FileOperation implements WebIntf {
         }
 
       }
-    } catch (Exception e) {
+    } catch (UnsupportedEncodingException e) {
+      throw new CrawlerFailedException("UTF-8 not supported", e.fillInStackTrace());
     }
   }
 
   @Override
   public void disconnect() {
-    // TODO Auto-generated method stub
     webClient.closeAllWindows();
   }
 
   public static void main(String args[]) {
-    new Crawler(args);
-    System.out.println("***********END**************");
+    try {
+      new Crawler(args);
+    } catch (CrawlerFailedException e) {
+      e.printStackTrace();
+    } catch (FileOperationFailedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
   }
 }
