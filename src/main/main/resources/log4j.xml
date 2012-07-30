@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+  <!-- Appenders -->
+  <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+    <param name="Threshold" value="TRACE" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
+    </layout>
+  </appender>
+
+  <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+    <param name="Threshold" value="TRACE" />
+    <param name="File" value="logs/jaide-wire.log" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
+    </layout>
+  </appender>
+
+  <!-- Loggers -->
+  <logger name="com.gargoylesoftware.htmlunit" additivity="false">
+    <level value="FATAL" />
+    <appender-ref ref="consoleAppender" />
+    <appender-ref ref="fileAppender" />
+  </logger>
+
+  <logger name="org.apache.http" additivity="false">
+    <level value="FATAL" />
+    <appender-ref ref="consoleAppender" />
+    <appender-ref ref="fileAppender" />
+  </logger>
+
+  <logger name="de.jaide.wire" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="consoleAppender" />
+    <appender-ref ref="fileAppender" />
+  </logger>
+
+</log4j:configuration>
