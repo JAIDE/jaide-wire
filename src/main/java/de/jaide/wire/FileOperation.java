@@ -17,8 +17,9 @@ import java.util.ArrayList;
 import de.jaide.exception.FileOperationFailedException;
 
 /**
- * File reader and Writer
+ * File reader and rriter
  * 
+ * @author Janarthanan Ramar (janarthanan.ramar@jaide.de)
  * @author Rias A. Sherzad (rias.sherzad@jaide.de)
  */
 public abstract class FileOperation {
@@ -40,7 +41,7 @@ public abstract class FileOperation {
   protected File outputFile = null;
 
   /**
-   * A helper method that reads the file and returns the results in arraylist
+   * A helper method that reads the file and returns the results in an ArrayList.
    * 
    * @param fileName
    * @return retList.
@@ -53,6 +54,7 @@ public abstract class FileOperation {
 
     try {
       fstream = new FileInputStream(fileName);
+
       /*
        * Get the object of DataInputStream
        */
@@ -101,14 +103,12 @@ public abstract class FileOperation {
    * @throws FileOperationFailedException
    */
   protected void writeOutput(String words, String anc) throws FileOperationFailedException {
-
     try {
       output.write(words + "::" + anc);
       output.write("\n");
     } catch (IOException e) {
       throw new FileOperationFailedException(e.fillInStackTrace());
     }
-
   }
 
   /**

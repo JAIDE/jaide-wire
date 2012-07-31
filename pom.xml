@@ -72,7 +72,7 @@
               <goal>java</goal>
             </goals>
             <configuration>
-              <mainClass>de.jaide.wire.Crawler</mainClass>
+              <mainClass>de.jaide.wire.WikipediaCrawler</mainClass>
               <arguments>
                 <argument>input/wikipedia-urls.txt</argument>
                 <argument>input/wikipedia-banned-sections.txt</argument>
