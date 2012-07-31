@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.lang.WordUtils;
 import org.apache.log4j.Logger;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
@@ -34,20 +35,16 @@ public class Crawler extends FileOperation implements WebIntf {
   protected WebClient webClient = null;
 
   ArrayList<String> urlList = new ArrayList<String>();
-
   ArrayList<String> bannedWordList = new ArrayList<String>();
-
   ArrayList<String> bannedSectionList = new ArrayList<String>();
+  ArrayList<String> wordList = new ArrayList<String>();
 
   HtmlPage page = null;
   HtmlPage crawlPage = null;
-
   HtmlAnchor anchor = null;
 
   String word = "";
-
   String anc = "";
-
   String[] lang = { "en", "ar", "fa", "fr", "de", "id", "es", "tr", "ur" };
 
   public Crawler(String args[]) throws CrawlerFailedException, FileOperationFailedException {
@@ -126,7 +123,9 @@ public class Crawler extends FileOperation implements WebIntf {
             CrawlInfo(url);
           }
 
+          Thread.sleep(250);
         }
+        Thread.sleep(250);
       } catch (MalformedURLException e) {
         throw new CrawlerFailedException(
             "The server tried to connect to or was redirected to a host that could not be resolved. This could be a firewall or a DNS issue.",
@@ -137,6 +136,8 @@ public class Crawler extends FileOperation implements WebIntf {
         throw new CrawlerFailedException(
             "The server tried to connect to or was redirected to a host that could not be resolved. This could be a firewall or a DNS issue.",
             e.fillInStackTrace());
+      } catch (InterruptedException e) {
+        throw new CrawlerFailedException(e.fillInStackTrace());
       } catch (IOException e) {
         throw new CrawlerFailedException("Some general problem occured. Please see the stacktrace for more information.",
             e.fillInStackTrace());
@@ -151,6 +152,7 @@ public class Crawler extends FileOperation implements WebIntf {
    */
   private void CrawlInfo(URL url) throws CrawlerFailedException, FileOperationFailedException {
     ArrayList<String> pathList = new ArrayList<String>();
+    wordList = new ArrayList();
     try {
 
       setOutputFile();
@@ -203,12 +205,6 @@ public class Crawler extends FileOperation implements WebIntf {
         pathList.add("//ul//li//a[@class='external text']");
 
       /*
-       * Xpath for Footnotes
-       */
-      if (!bannedSectionList.contains("Footnotes"))
-        pathList.add("//ul[@id='footer-places']//li//a");
-
-      /*
        * Requesting the webpage for the given xpath
        */
       for (int i = 0; i < pathList.size(); i++)
@@ -227,6 +223,20 @@ public class Crawler extends FileOperation implements WebIntf {
   }
 
   /*
+   * Check if the given word is string
+   */
+  public boolean checkIfString(String in) {
+
+    try {
+      Integer.parseInt(in);
+    } catch (NumberFormatException ex) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /*
    * Crawling the webpage for given xpath
    */
   private void dataIterator(String path) throws CrawlerFailedException, FileOperationFailedException {
@@ -241,10 +251,13 @@ public class Crawler extends FileOperation implements WebIntf {
        */
       while (iterator.hasNext()) {
         anchor = (HtmlAnchor) iterator.next();
-        word = anchor.asText().toString().trim();
+        word = WordUtils.capitalize(anchor.asText().toString().trim());
+        
+        boolean isString = checkIfString(word);
         anc = anchor.getHrefAttribute();
+        
         if (!anc.contains("http"))
-          value = "http://" + locale + ".wikipedia.org/" + anc;
+          value = "http://" + locale + ".wikipedia.org" + anc;
         else
           value = anc;
         anc = URLDecoder.decode(value, "UTF-8");
@@ -252,7 +265,12 @@ public class Crawler extends FileOperation implements WebIntf {
         if (!anc.toLowerCase().contains("jpg") && !anc.toLowerCase().contains("png") && !anc.toString().toLowerCase().contains("edit")
             && !anc.toString().toLowerCase().contains("gif") && !anc.toString().toLowerCase().contains("svg")
             && !bannedWordList.contains(word) && !word.equalsIgnoreCase("") && !anc.contains("cite_note") && !anc.contains("cite_ref")
-            && !word.contains("http") && word.length() > 1) {
+            && !word.contains("http") && word.length() > 1 && !word.contains("?") && !word.contains(":") && !wordList.contains(word)
+            && isString) {
+          /*
+           * For unique check
+           */
+          wordList.add(word);
           writeOutput(word, anc);
         }
 
