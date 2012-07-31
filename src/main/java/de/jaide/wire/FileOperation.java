@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import de.jaide.exception.FileOperationFailedException;
 
 /**
- * File reader and rriter
+ * File reader and writer.
  * 
  * @author Janarthanan Ramar (janarthanan.ramar@jaide.de)
  * @author Rias A. Sherzad (rias.sherzad@jaide.de)
