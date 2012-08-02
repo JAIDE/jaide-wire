@@ -93,7 +93,7 @@ public abstract class FileOperation {
       new File(outputPath).mkdir();
       outputFile = new File(outputPath + "/" + outputFileName + "_" + locale + ".txt");
     }
-    output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"));
+    output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile, true), "UTF-8"));
   }
 
   /**
