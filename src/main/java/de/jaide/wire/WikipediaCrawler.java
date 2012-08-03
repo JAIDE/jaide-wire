@@ -261,12 +261,11 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
 
       closeOutputFile();
     } catch (FailingHttpStatusCodeException e) {
-      throw new CrawlerFailedException(
+      LOG.error(
           "The server tried to connect to or was redirected to a host that could not be resolved. This could be a firewall or a DNS issue.",
-          e.fillInStackTrace());
+          e);
     } catch (IOException e) {
-      throw new CrawlerFailedException("Some general problem occured. Please see the stacktrace for more information.",
-          e.fillInStackTrace());
+      LOG.error("Some general problem occured. Please see the stacktrace for more information.", e);
     }
   }
 
