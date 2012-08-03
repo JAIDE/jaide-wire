@@ -1,4 +1,162 @@
-Agriculture, http://en.wikipedia.org/wiki/Agriculture
-Chemistry, http://en.wikipedia.org/wiki/Chemistry
-Photography, http://en.wikipedia.org/wiki/Photography
-Pashtunwali, http://en.wikipedia.org/wiki/Pashtunwali
+Academia,  http://en.wikipedia.org/wiki/Academia
+Accounting,  http://en.wikipedia.org/wiki/Accounting
+Aerospace,  http://en.wikipedia.org/wiki/Aerospace
+Agriculture,  http://en.wikipedia.org/wiki/Agriculture
+Airlines,  http://en.wikipedia.org/wiki/Airlines
+Alternative Medicine,  http://en.wikipedia.org/wiki/Alternative_Medicine
+Apparel & Fashion,  http://en.wikipedia.org/wiki/Apparel
+Apparel & Fashion,  http://en.wikipedia.org/wiki/Fashion
+Architecture & Planning,  http://en.wikipedia.org/wiki/Architecture
+Architecture & Planning,  http://en.wikipedia.org/wiki/Architectural_planning
+Arts & Crafts,  http://en.wikipedia.org/wiki/Arts_and_crafts
+Automotive,  http://en.wikipedia.org/wiki/Automotive
+Banking,  http://en.wikipedia.org/wiki/Banking
+Biotechnology,  http://en.wikipedia.org/wiki/Biotechnology
+Broadcast Media,  http://en.wikipedia.org/wiki/Broadcast
+Building Materials,  http://en.wikipedia.org/wiki/Building_Materials
+Business Supplies & Equipment,  http://en.wikipedia.org/wiki/Business
+Business Supplies & Equipment,  http://en.wikipedia.org/wiki/Supply_(economics)
+Business Supplies & Equipment,  http://en.wikipedia.org/wiki/Equipment
+Chemicals,  http://en.wikipedia.org/wiki/Chemicals
+Civic & Social Organizations,  http://en.wikipedia.org/wiki/Civil_society
+Civic & Social Organizations,  http://en.wikipedia.org/wiki/Social_group
+Civil Engineering,  http://en.wikipedia.org/wiki/Civil_Engineering
+Civil Service,  http://en.wikipedia.org/wiki/Civil_Service
+Composites,  http://en.wikipedia.org/wiki/Composite_material
+Computer & Network Security,  http://en.wikipedia.org/wiki/Computer
+Computer & Network Security,  http://en.wikipedia.org/wiki/Network_Security
+Computer Games,  http://en.wikipedia.org/wiki/Computer_Games
+Computer Hardware,  http://en.wikipedia.org/wiki/History_of_computing_hardware
+Computer Networking,  http://en.wikipedia.org/wiki/Computer_Networking
+Computer Software,  http://en.wikipedia.org/wiki/Computer_Software
+Construction,  http://en.wikipedia.org/wiki/Construction
+Consulting,  http://en.wikipedia.org/wiki/Consultants
+Consumer Electronics,  http://en.wikipedia.org/wiki/Consumer_Electronics
+Consumer Goods,  http://en.wikipedia.org/wiki/Consumer
+Consumer Goods,  http://en.wikipedia.org/wiki/Good_(economics)
+Consumer Services,  http://en.wikipedia.org/wiki/Consumer
+Consumer Services,  http://en.wikipedia.org/wiki/Service_(economics)
+Cosmetics,  http://en.wikipedia.org/wiki/Cosmetics
+Daycare,  http://en.wikipedia.org/wiki/Daycare
+Defense/Military,  http://en.wikipedia.org/wiki/Military
+Defense/Military,  http://en.wikipedia.org/wiki/Defense_(military)
+Design,  http://en.wikipedia.org/wiki/Design
+E-learning,  http://en.wikipedia.org/wiki/E-learning
+Education,  http://en.wikipedia.org/wiki/Education
+Electrical Engineering,  http://en.wikipedia.org/wiki/Electrical_Engineering
+Energy,  http://en.wikipedia.org/wiki/Energy
+Entertainment,  http://en.wikipedia.org/wiki/Entertainment
+Environmental Services,  http://en.wikipedia.org/wiki/Social_environment
+Environmental Services,  http://en.wikipedia.org/wiki/Community_service
+Events Services,  http://en.wikipedia.org/wiki/Event_management
+Facilities Services,  http://en.wikipedia.org/wiki/Facility_management
+Facility Management,  http://en.wikipedia.org/wiki/Facility_management
+Financial Services,  http://en.wikipedia.org/wiki/Financial_Services
+Fishery,  http://en.wikipedia.org/wiki/Fishery
+Food,  http://en.wikipedia.org/wiki/Food
+Fundraising,  http://en.wikipedia.org/wiki/Fundraising
+Furniture,  http://en.wikipedia.org/wiki/Furniture
+Gardening/Landscaping,  http://en.wikipedia.org/wiki/Gardening
+Gardening/Landscaping,  http://en.wikipedia.org/wiki/Landscaping
+Geology,  http://en.wikipedia.org/wiki/Geology
+Glass & Ceramics,  http://en.wikipedia.org/wiki/Glass_ceramics
+Graphic Design,  http://en.wikipedia.org/wiki/Graphic_Design
+Health & Fitness,  http://en.wikipedia.org/wiki/Health_%26_Fitness
+Hospitality,  http://en.wikipedia.org/wiki/Hospitality
+Human Resources,  http://en.wikipedia.org/wiki/Human_Resources
+Import & Export,  http://en.wikipedia.org/wiki/Import-export
+Industrial Automation,  http://en.wikipedia.org/wiki/Industrial_Automation
+Information Services,  http://en.wikipedia.org/wiki/Information_services
+Information Technology & Services,  http://en.wikipedia.org/wiki/IT_service_management
+Insurance,  http://en.wikipedia.org/wiki/Insurance
+International Affairs,  http://en.wikipedia.org/wiki/International_relations
+International Trade & Development,  http://en.wikipedia.org/wiki/International_trade
+International Trade & Development,  http://en.wikipedia.org/wiki/Trade_and_development
+Investment Banking,  http://en.wikipedia.org/wiki/Investment_Banking
+Journalism,  http://en.wikipedia.org/wiki/Journalism
+Legal Services,  http://en.wikipedia.org/wiki/Legal_services
+LeisureTravel & Tourism,  http://en.wikipedia.org/wiki/Tourism
+Libraries,  http://en.wikipedia.org/wiki/Libraries
+Logistics & Supply Chain,  http://en.wikipedia.org/wiki/Logistics
+Logistics & Supply Chain,  http://en.wikipedia.org/wiki/Supply_chain
+Luxury Goods & Jewelry,  http://en.wikipedia.org/wiki/Luxury_goods
+Luxury Goods & Jewelry,  http://en.wikipedia.org/wiki/Jewelry
+Machinery,  http://en.wikipedia.org/wiki/Machinery
+Management Consulting,  http://en.wikipedia.org/wiki/Management_Consulting
+Maritime,  http://en.wikipedia.org/wiki/Maritimes
+Market Research,  http://en.wikipedia.org/wiki/Market_Research
+Marketing & Advertising,  http://en.wikipedia.org/wiki/Marketing
+Marketing & Advertising,  http://en.wikipedia.org/wiki/Advertising
+Mechanical/Industrial Engineering,  http://en.wikipedia.org/wiki/Mechanical_engineering
+Mechanical/Industrial Engineering,  http://en.wikipedia.org/wiki/Industrial_engineering
+Media Production,  http://en.wikipedia.org/wiki/Film_production
+Medical Devices,  http://en.wikipedia.org/wiki/Medical_Devices
+Medical Services,  http://en.wikipedia.org/wiki/Medical_services
+Metal/Metalworking,  http://en.wikipedia.org/wiki/Metalworking
+Metrology/Control Engineering,  http://en.wikipedia.org/wiki/Metrology
+Metrology/Control Engineering, http://en.wikipedia.org/wiki/Control_Engineering
+Mining & Metals,  http://en.wikipedia.org/wiki/Mining
+Mining & Metals, http://en.wikipedia.org/wiki/Metals
+Motion Pictures,  http://en.wikipedia.org/wiki/Motion_Pictures
+Museums & Cultural Institutions,  http://en.wikipedia.org/wiki/Museum
+Music,  http://en.wikipedia.org/wiki/Music
+Nanotechnology,  http://en.wikipedia.org/wiki/Nanotechnology
+Non-Profit Organization,  http://en.wikipedia.org/wiki/Non-Profit_Organization
+Nursing & Personal Care,  http://en.wikipedia.org/wiki/Nursing
+Nursing & Personal Care,  http://en.wikipedia.org/wiki/Personal_care
+Oil & Energy,  http://en.wikipedia.org/wiki/Oil
+Oil & Energy,  http://en.wikipedia.org/wiki/Energy
+Online Media,  http://en.wikipedia.org/wiki/Online_media
+Outsourcing/Offshoring,  http://en.wikipedia.org/wiki/Outsourcing
+Outsourcing/Offshoring, http://en.wikipedia.org/wiki/Offshoring
+Packaging & Containers,  http://en.wikipedia.org/wiki/Package_(packaging)
+Paper & Forest Products,  http://en.wikipedia.org/wiki/Paper
+Paper & Forest Products,  http://en.wikipedia.org/wiki/Forest_Products
+Pharmaceuticals,  http://en.wikipedia.org/wiki/Pharmaceuticals
+Photography,  http://en.wikipedia.org/wiki/Photography
+Plastics,  http://en.wikipedia.org/wiki/Plastics
+Politics,  http://en.wikipedia.org/wiki/Politics
+Print Media,  http://en.wikipedia.org/wiki/Print_media
+Printing,  http://en.wikipedia.org/wiki/Printing
+Process Management,  http://en.wikipedia.org/wiki/Process_Management
+Professional Training & Coaching,  http://en.wikipedia.org/wiki/Professional_training
+Professional Training & Coaching,  http://en.wikipedia.org/wiki/Coaching
+Psychology/Psychotherapy,  http://en.wikipedia.org/wiki/Psychology
+Psychology/Psychotherapy,  http://en.wikipedia.org/wiki/Psychotherapy
+Public Health,  http://en.wikipedia.org/wiki/Public_Health
+Public Relations & Communications,  http://en.wikipedia.org/wiki/Public_relations
+Public Relations & Communications,  http://en.wikipedia.org/wiki/Communications
+Publishing,  http://en.wikipedia.org/wiki/Publishing
+Railroad,  http://en.wikipedia.org/wiki/Railroad
+Real Estate,  http://en.wikipedia.org/wiki/Real_Estate
+Recreational Facilities & Services,  http://en.wikipedia.org/wiki/Recreational
+Recycling & Waste Management,  http://en.wikipedia.org/wiki/Recycling
+Recycling & Waste Management,   http://en.wikipedia.org/wiki/Waste_management
+Renewables & Environment  http://en.wikipedia.org/wiki/Renewables
+Research,  http://en.wikipedia.org/wiki/Research
+Restaurants & Food Service,  http://en.wikipedia.org/wiki/Restaurant 
+Restaurants & Food Service,  http://en.wikipedia.org/wiki/Food_service
+Retail,  http://en.wikipedia.org/wiki/Retail
+Security & Investigations,  http://en.wikipedia.org/wiki/Security
+Semiconductors,  http://en.wikipedia.org/wiki/Semiconductors
+Shipbuilding,  http://en.wikipedia.org/wiki/Shipbuilding
+Sports,  http://en.wikipedia.org/wiki/Sports
+Staffing & Recruiting,  http://en.wikipedia.org/wiki/Recruitment
+Tax accountancy/Auditing,  http://en.wikipedia.org/wiki/Audit
+Telecommunication,  http://en.wikipedia.org/wiki/Telecommunication
+Textiles,  http://en.wikipedia.org/wiki/Textiles
+Theater/Stage/Cinema,  http://en.wikipedia.org/wiki/Theater
+Timber,  http://en.wikipedia.org/wiki/Timber
+Traffic Engineering,  http://en.wikipedia.org/wiki/Traffic_Engineering
+Translation & Localization,  http://en.wikipedia.org/wiki/Translation
+Transport,  http://en.wikipedia.org/wiki/Transport
+Venture Capital & Private Equity,  http://en.wikipedia.org/wiki/Venture_Capital
+Venture Capital & Private Equity,  http://en.wikipedia.org/wiki/Private_Equity
+Veterinary,  http://en.wikipedia.org/wiki/Veterinary
+Welfare & Community Health,  http://en.wikipedia.org/wiki/Welfare
+Welfare & Community Health,  http://en.wikipedia.org/wiki/Community_health
+Wholesale,  http://en.wikipedia.org/wiki/Wholesale
+Writing & Editing,  http://en.wikipedia.org/wiki/Writing
+Writing & Editing,  http://en.wikipedia.org/wiki/Editing
+
+
