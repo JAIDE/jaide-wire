@@ -144,7 +144,7 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
       try {
         content = urlList.get(i);
         value = content.split(",");
-        outputFileName = value[0].toString();
+        outputFileName = value[0].toString().replaceAll("\\s+", "").replaceAll("&", "And").replaceAll("/", "_").replaceAll(",", "_");
         url = new URL(value[1]);
 
         /*
