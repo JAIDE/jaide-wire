@@ -30,8 +30,9 @@ Computer Hardware,  http://en.wikipedia.org/wiki/History_of_computing_hardware
 Computer Networking,  http://en.wikipedia.org/wiki/Computer_Networking
 Computer Software,  http://en.wikipedia.org/wiki/Computer_Software
 Construction,  http://en.wikipedia.org/wiki/Construction
-Consulting,  http://en.wikipedia.org/wiki/Consultants
+Consulting,  http://en.wikipedia.org/wiki/Management_consulting
 Consumer Electronics,  http://en.wikipedia.org/wiki/Consumer_Electronics
+Consumer Electronics, http://en.wikipedia.org/wiki/Consumer_Electronics_Show
 Consumer Goods,  http://en.wikipedia.org/wiki/Consumer
 Consumer Goods,  http://en.wikipedia.org/wiki/Good_(economics)
 Consumer Services,  http://en.wikipedia.org/wiki/Consumer
@@ -62,12 +63,14 @@ Geology,  http://en.wikipedia.org/wiki/Geology
 Glass & Ceramics,  http://en.wikipedia.org/wiki/Glass_ceramics
 Graphic Design,  http://en.wikipedia.org/wiki/Graphic_Design
 Health & Fitness,  http://en.wikipedia.org/wiki/Health_%26_Fitness
-Hospitality,  http://en.wikipedia.org/wiki/Hospitality
-Human Resources,  http://en.wikipedia.org/wiki/Human_Resources
+Hospitality,  http://en.wikipedia.org/wiki/Hospitality_industry
+Hospitality, http://en.wikipedia.org/wiki/Hospitality_management
+Human Resources,  http://en.wikipedia.org/wiki/Human_resource_management
 Import & Export,  http://en.wikipedia.org/wiki/Import-export
 Industrial Automation,  http://en.wikipedia.org/wiki/Industrial_Automation
-Information Services,  http://en.wikipedia.org/wiki/Information_services
-Information Technology & Services,  http://en.wikipedia.org/wiki/IT_service_management
+Information Services,  http://en.wikipedia.org/wiki/Information_systems
+Information Technology & Services,  http://en.wikipedia.org/wiki/Information_technology
+Information Technology & Services, http://en.wikipedia.org/wiki/Information_and_communications_technology
 Insurance,  http://en.wikipedia.org/wiki/Insurance
 International Affairs,  http://en.wikipedia.org/wiki/International_relations
 International Trade & Development,  http://en.wikipedia.org/wiki/International_trade
@@ -84,7 +87,8 @@ Luxury Goods & Jewelry,  http://en.wikipedia.org/wiki/Jewelry
 Machinery,  http://en.wikipedia.org/wiki/Machinery
 Management Consulting,  http://en.wikipedia.org/wiki/Management_Consulting
 Maritime,  http://en.wikipedia.org/wiki/Maritimes
-Market Research,  http://en.wikipedia.org/wiki/Market_Research
+Market Research,  http://en.wikipedia.org/wiki/Marketing_research
+Market Research, http://en.wikipedia.org/wiki/Market_research
 Marketing & Advertising,  http://en.wikipedia.org/wiki/Marketing
 Marketing & Advertising,  http://en.wikipedia.org/wiki/Advertising
 Mechanical/Industrial Engineering,  http://en.wikipedia.org/wiki/Mechanical_engineering
@@ -106,7 +110,9 @@ Nursing & Personal Care,  http://en.wikipedia.org/wiki/Nursing
 Nursing & Personal Care,  http://en.wikipedia.org/wiki/Personal_care
 Oil & Energy,  http://en.wikipedia.org/wiki/Oil
 Oil & Energy,  http://en.wikipedia.org/wiki/Energy
-Online Media,  http://en.wikipedia.org/wiki/Online_media
+Online Media,  http://en.wikipedia.org/wiki/Media_(communication)
+Online Media,  http://en.wikipedia.org/wiki/Online
+Online Media, http://en.wikipedia.org/wiki/World_Wide_Web
 Outsourcing/Offshoring,  http://en.wikipedia.org/wiki/Outsourcing
 Outsourcing/Offshoring, http://en.wikipedia.org/wiki/Offshoring
 Packaging & Containers,  http://en.wikipedia.org/wiki/Package_(packaging)
@@ -155,8 +161,7 @@ Venture Capital & Private Equity,  http://en.wikipedia.org/wiki/Private_Equity
 Veterinary,  http://en.wikipedia.org/wiki/Veterinary
 Welfare & Community Health,  http://en.wikipedia.org/wiki/Welfare
 Welfare & Community Health,  http://en.wikipedia.org/wiki/Community_health
-Wholesale,  http://en.wikipedia.org/wiki/Wholesale
+Wholesale, http://en.wikipedia.org/wiki/Wholesale
+Wholesale,  http://en.wikipedia.org/wiki/Wholesale_marketing
 Writing & Editing,  http://en.wikipedia.org/wiki/Writing
 Writing & Editing,  http://en.wikipedia.org/wiki/Editing
-
-
