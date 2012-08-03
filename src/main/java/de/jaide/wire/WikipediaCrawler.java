@@ -301,6 +301,8 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
 
     String word = "";
     String anc = "";
+    String bannedWord = "";
+    boolean isBannedWordExist = false;
 
     try {
       /*
@@ -320,11 +322,21 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
 
         anc = URLDecoder.decode(value, "UTF-8");
 
+        isBannedWordExist = false;
+        for (int i = 0; i < bannedWordList.size(); i++) {
+          bannedWord = bannedWordList.get(i).toString();
+          if (anc.contains(bannedWord)) {
+            isBannedWordExist = true;
+            break;
+          } else
+            isBannedWordExist = false;
+
+        }
         if (!anc.toLowerCase().contains("jpg") && !anc.toLowerCase().contains("png") && !anc.toString().toLowerCase().contains("edit")
             && !anc.toString().toLowerCase().contains("gif") && !anc.toString().toLowerCase().contains("svg")
             && !bannedWordList.contains(word.toLowerCase()) && !word.equalsIgnoreCase("") && !anc.contains("cite_note")
             && !anc.contains("cite_ref") && !word.contains("http") && word.length() > 1 && !word.contains("?") && !word.contains("[")
-            && !word.contains("]") && !word.contains(":") && !wordList.contains(word) && isString) {
+            && !word.contains("]") && !word.contains(":") && !wordList.contains(word) && isString && isBannedWordExist == false) {
 
           /*
            * Added to a LinkedHashSet to remove duplicates while preserving the sort order.
