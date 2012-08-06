@@ -26,8 +26,7 @@ import de.jaide.exception.FileOperationFailedException;
 
 /**
  * A Wikipedia WikipediaCrawler. Expects a list of URLs to scan. Considers the linked words to be related to the topic of the URL and writes
- * them
- * into a file.
+ * them into a file.
  * 
  * @author Janarthanan Ramar (janarthanan.r@gmail.com)
  * @author Rias A. Sherzad (rias.sherzad@jaide.de)
@@ -203,7 +202,6 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
     wordList = new LinkedHashSet<String>();
 
     try {
-
       setOutputFile();
       crawlPage = (HtmlPage) webClient.getPage(url);
 
@@ -314,6 +312,9 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
         boolean isString = isString(word);
         anc = anchor.getHrefAttribute();
 
+        /*
+         * TODO: Doc
+         */
         if (!anc.contains("http"))
           value = "http://" + locale + ".wikipedia.org" + anc;
         else
@@ -321,6 +322,9 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
 
         anc = URLDecoder.decode(value, "UTF-8");
 
+        /*
+         * TODO: Doc
+         */
         isBannedWordExist = false;
         for (int i = 0; i < bannedWordList.size(); i++) {
           bannedWord = bannedWordList.get(i).toString();
@@ -331,6 +335,10 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
             isBannedWordExist = false;
 
         }
+
+        /*
+         * TODO: Doc
+         */
         if (!anc.toLowerCase().contains("jpg") && !anc.toLowerCase().contains("png") && !anc.toString().toLowerCase().contains("edit")
             && !anc.toString().toLowerCase().contains("gif") && !anc.toString().toLowerCase().contains("svg")
             && !bannedWordList.contains(word.toLowerCase()) && !word.equalsIgnoreCase("") && !anc.contains("cite_note")
