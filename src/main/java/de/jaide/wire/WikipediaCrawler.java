@@ -313,7 +313,7 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
         anc = anchor.getHrefAttribute();
 
         /*
-         * TODO: Doc
+         * Checks the URL contains "http" or not. If not concatenates the "http://" with the URL
          */
         if (!anc.contains("http"))
           value = "http://" + locale + ".wikipedia.org" + anc;
@@ -323,7 +323,7 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
         anc = URLDecoder.decode(value, "UTF-8");
 
         /*
-         * TODO: Doc
+         * Checks if the URL contains the bannedWord
          */
         isBannedWordExist = false;
         for (int i = 0; i < bannedWordList.size(); i++) {
@@ -337,7 +337,7 @@ public class WikipediaCrawler extends FileOperation implements ICrawler {
         }
 
         /*
-         * TODO: Doc
+         * Filters the URL and Words, which contains jpg, png,gif,svg,banned words and cite notes
          */
         if (!anc.toLowerCase().contains("jpg") && !anc.toLowerCase().contains("png") && !anc.toString().toLowerCase().contains("edit")
             && !anc.toString().toLowerCase().contains("gif") && !anc.toString().toLowerCase().contains("svg")
